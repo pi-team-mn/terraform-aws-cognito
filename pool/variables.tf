@@ -8,3 +8,8 @@ variable "region" {
   description = "Region to deploy in"
   default     = "eu-central-1"
 }
+
+variable "allow_signup" {
+  default     = false
+  description = "Allow users to create their own accounts"
+}
