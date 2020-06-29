@@ -23,6 +23,17 @@ variable "pool_name" {
   type = string
 }
 
+variable "domain_url" {
+  type        = string
+  description = "The URL that auth requests need to be sent to"
+}
+
+variable "secret_deletion_time" {
+  type        = number
+  default     = 7
+  description = "Amount of days that secrets will be kept after deletion"
+}
+
 
 locals {
   pool_id = element(tolist(data.aws_cognito_user_pools.pools.ids), 0)
