@@ -34,7 +34,7 @@ variable "secret_deletion_time" {
   description = "Amount of days that secrets will be kept after deletion"
 }
 
-
-locals {
-  pool_id = element(tolist(data.aws_cognito_user_pools.pools.ids), 0)
+variable "pool_id" {
+  type        = string
+  description = "ID of a user pool to create clients in"
 }
