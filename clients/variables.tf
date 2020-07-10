@@ -19,10 +19,6 @@ variable "project_name" {
   type = string
 }
 
-variable "pool_name" {
-  type = string
-}
-
 variable "domain_url" {
   type        = string
   description = "The URL that auth requests need to be sent to"
