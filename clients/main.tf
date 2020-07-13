@@ -1,6 +1,6 @@
 resource "aws_cognito_resource_server" "resource" {
-  identifier   = "${var.project_name}-${var.resource_name}"
-  name         = "${var.project_name}-${var.resource_name}"
+  identifier   = var.resource_name
+  name         = var.resource_name
   user_pool_id = var.pool_id
 
   dynamic "scope" {
