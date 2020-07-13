@@ -20,6 +20,8 @@ resource "aws_cognito_user_pool_client" "clients" {
   allowed_oauth_flows                  = ["client_credentials"]
   allowed_oauth_flows_user_pool_client = true
   allowed_oauth_scopes                 = var.users[count.index].scopes
+
+  depends_on = [aws_cognito_resource_server.resource]
 }
 
 
