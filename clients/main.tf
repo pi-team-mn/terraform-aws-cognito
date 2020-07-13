@@ -19,9 +19,7 @@ resource "aws_cognito_user_pool_client" "clients" {
   generate_secret                      = true
   allowed_oauth_flows                  = ["client_credentials"]
   allowed_oauth_flows_user_pool_client = true
-  #  explicit_auth_flows                  = ["ADMIN_NO_SRP_AUTH"]
-  # todo: scopes are not yet figured out
-  allowed_oauth_scopes                 = aws_cognito_resource_server.resource.scope_identifiers
+  allowed_oauth_scopes                 = var.users[count.index].scopes
 }
 
 
